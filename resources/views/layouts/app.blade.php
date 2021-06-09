@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ asset('css/app.css')}}">
     @yield('head')
 </head>
 <body>
-    @yield('main')
-    @yield('foot-script'); 
+    @yield('content')
+    @yield('foot-script')
 </body>
 </html>

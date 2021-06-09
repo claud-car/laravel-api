@@ -14,5 +14,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/comics', 'ComicController@index');
+Route::get('/comics', 'ComicController@index')->middleware('checkApiToken');
 Route::post('/comics', 'ComicController@store');

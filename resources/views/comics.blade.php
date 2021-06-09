@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
-@section('main')
+@section('content')
 <main id="root">
     <ul>
         <li v-for="comic in comics" :key="comic.id">
-            <h4></h4>
-            <p></p>
+            <h4>@{{comic.name}}</h4>
+            <p>@{{comic.description}}</p>
         </li>
     </ul>
 </main>
@@ -13,21 +13,7 @@
 
 
 @section('foot-script')
-<script type="text/javascript">
-    let app= new Vue({
-        el: '#root',
-        data: {
-            comics:[]
-        },
-        created() {
-            axios.get('http://localhost:8000/api/comics').then((response) => {
-                this.comics = response.data.data;
-            })
-        }
-    });
-</script>
-
-
+<script src="{{asset('js/comics.js')}}"></script>
 @endsection
 
 @section('head')
